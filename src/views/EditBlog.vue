@@ -1,6 +1,6 @@
 <template>
    <div>
-   <form v-on:submit.prevent="sendblog">
+   <form v-on:submit.prevent="updateblog">
     <div class="box box-info">
            
             <div class="box-header">
@@ -19,16 +19,15 @@
             <!-- /.box-header -->
             <div class="box-body pad">
               <div class="form-group">
-                  <input type="text" class="form-control" id="title" placeholder="写一个标题吧">
+                  <input type="text" class="form-control" id="title" placeholder="写一个标题吧" v-bind:value="blogtitle">
                </div>
                     <textarea id="editor1" name="editor1" rows="10" cols="80">
-                                           
                     </textarea>
             </div>
           <!-- /.box -->
 
             <div class="box-footer">
-                <button class="btn btn-primary" > 发表</button>
+                <button class="btn btn-primary"> 确认修改</button>
               </div>
           </div>
           <!-- /.box bos-info -->
@@ -44,19 +43,44 @@ export default {
   name: 'AddBlog',
   data () {
     return {
-      title: '写一篇日志',
+      title: '修改日志',
+      blogtitle: null,
+      blogcontent: null,
+      blogid: null,
       blogurl: '/resources'
     }
   },
+  created () {
+    this.getBlogs()
+  },
 
   methods: {
-    sendblog () {
+    getBlogs () {
+      var that = this
+      this.blogid = that.$route.query.blogid
+      axios.get(this.blogurl + '/' + that.$route.query.blogid)
+        .then(function (response) {
+          that.blogtitle = response.data.title
+          that.blogcontent = response.data.content
+          /* eslint-disable */
+					var nIntervId = setInterval(function(){
+						if (CKEDITOR.instances.editor1.setData){
+              CKEDITOR.instances.editor1.setData(that.blogcontent);
+							clearInterval(nIntervId)
+            }
+          }, 500);
+          /* eslint-enable */
+        })
+    },
+
+    updateblog () {
       /* eslint-disable */
       var title1 = $('#title').val();
       var content1 =  CKEDITOR.instances.editor1.getData();
+      var blogid1 = this.blogid
       /* eslint-enable */
       var that = this
-      axios.post(this.blogurl, {
+      axios.put(this.blogurl + '/' + blogid1, {
         title: title1,
         content: content1
       })

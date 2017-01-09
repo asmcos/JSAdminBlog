@@ -20,8 +20,7 @@ new Vue({
         vclass: 'treeview',
         submenus: [
           { title: '我的日记', url: '/admin/myblog' },
-          { title: '写日记', url: '/admin/addblog' },
-          { title: 'Bar2', url: '/admin/bar2' }
+          { title: '写日记', url: '/admin/addblog' }
         ]
       }
     ]

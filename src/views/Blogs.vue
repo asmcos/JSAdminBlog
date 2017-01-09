@@ -10,12 +10,14 @@
                 <tbody><tr>
                   <th style="width: 10px">#</th>
                   <th>Task</th>
-                  <th style="width: 40px">Label</th>
+                  <th style="width: 40px">删除</th>
+                  <th style="width: 40px">操作</th>
                 </tr>
                 <tr v-for='(b,index) in blogs'>
                   <td>{{index}}.</td>
                   <td>{{b.title}}</td>
-                  <td><span class="badge bg-red">55%</span></td>
+                  <td><a v-bind:href="'/admin/editblog?blogid='+b._id"><span class="badge bg-blue">修改</span></a></td>
+                  <td @click='deleteblog(b._id)'><span class="badge bg-red">删除</span></td>
                 </tr>
               </tbody></table>
             </div>
@@ -56,6 +58,15 @@ export default {
         .then(function (response) {
           that.blogs = response.data
         })
+    },
+    deleteblog (id) {
+      axios.delete(this.blogurl + '/' + id)
+      window.location.reload()
+    },
+    editblog (id) {
+      console.log(id)
+      window.location.replace('admin/editblog?blogid=' + id)
+      window.location.reload()
     }
   },
   components: {
