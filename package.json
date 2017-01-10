@@ -7,7 +7,8 @@
     "example": "example"
   },
   "scripts": {
-    "build": "webpack --config build/webpack.conf.js",
+    "build:be": "webpack --config backend/build/webpack.conf.js",
+    "build:fe": "webpack --config frontend/build/webpack.conf.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
