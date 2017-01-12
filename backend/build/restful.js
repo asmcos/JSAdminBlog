@@ -1,12 +1,13 @@
+var restful = require('node-restful')
 var mong = require('mongoose')
 var ObjectID = mong.Types.ObjectId
 
 
-function Restful(r,app){
-	var mongoose = r.mongoose
+function Restful(app){
+	var mongoose = restful.mongoose
   mongoose.connect("mongodb://localhost/resoruces")	
 
-  var Resource = app.resource = r.model(
+  var Resource = app.resource = restful.model(
 		'resource', mongoose.Schema({
     title: String,
     content:String,

@@ -37,6 +37,7 @@
 
 <script>
 import '../js/editor'
+import '../js/node_ckeditor_uploader'
 import axios from 'axios'
 
 export default {

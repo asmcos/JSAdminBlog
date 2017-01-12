@@ -14,6 +14,8 @@ var port  = process.env.PORT || config.dev.port
 //app.use(staticPath, express.static('./dist'))
 //app.use(express.static(config.build.assetsRoot));
 app.use(express.static(path.resolve(__dirname,'../dist')));
+app.use(express.static(path.resolve(__dirname,'../../third/ckeditor')));
+app.use(express.static(path.resolve(__dirname,'../../uploads')));
 
 app.get("/admin/*",function (req,res){
   res.sendFile(path.resolve(__dirname, '../src/index.html'));

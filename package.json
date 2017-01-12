@@ -57,6 +57,7 @@
     "method-override": "^2.3.7",
     "mongoose": "^4.7.2",
     "morgan": "^1.7.0",
+    "multer": "^1.2.1",
     "node-restful": "^0.2.5",
     "opn": "^4.0.2",
     "rollup": "^0.36.3",
