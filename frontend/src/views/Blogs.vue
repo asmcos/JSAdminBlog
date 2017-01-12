@@ -48,7 +48,7 @@ export default {
     return {
       blogs: null,
       title: '我的所有日志',
-      blogurl: '/resources'
+      blogurl: '/resources?sort=-_id'
     }
   },
   created () {
