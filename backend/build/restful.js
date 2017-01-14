@@ -11,6 +11,7 @@ function Restful(app){
 		'resource', mongoose.Schema({
     title: String,
     content:String,
+    createdate :Date,
     year: Number,
   }))
   .methods(['get','post','put','delete']);
@@ -21,6 +22,10 @@ function Restful(app){
     next();
   })*/
 
+  Resource.before('post', function(req, res, next) {
+    req.body['createdate'] = new Date()
+    next();
+  })
 	Resource.register(app,'/resources')
 
 }

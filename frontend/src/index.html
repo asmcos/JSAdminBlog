@@ -17,6 +17,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+  <link rel="stylesheet" href="/css/the7blog.css">
   <!-- Theme style -->
   <!--link rel="stylesheet" href="dist/css/AdminLTE.min.css"-->
   <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
@@ -28,313 +29,165 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 </head>
-<!--
-BODY TAG OPTIONS:
-=================
-Apply one or more of the following classes to get the
-desired effect
-|---------------------------------------------------------|
-| SKINS         | skin-blue                               |
-|               | skin-black                              |
-|               | skin-purple                             |
-|               | skin-yellow                             |
-|               | skin-red                                |
-|               | skin-green                              |
-|---------------------------------------------------------|
-|LAYOUT OPTIONS | fixed                                   |
-|               | layout-boxed                            |
-|               | layout-top-nav                          |
-|               | sidebar-collapse                        |
-|               | sidebar-mini                            |
-|---------------------------------------------------------|
--->
-<body class="hold-transition skin-blue sidebar-mini">
-<div class="wrapper">
+<body class="page-template page-template-template-blog-list page-template-template-blog-list-php page page-id-15043 page-child parent-pageid-15117 dt-skin11r-preset no-bg blog layout-list disabled-hover-icons overlay-cursor-on accent-gradient srcset-enabled btn-material custom-btn-color custom-btn-hover-color contact-form-minimal accent-bullets bold-icons phantom-fade phantom-line-decoration phantom-custom-logo-on floating-mobile-menu-icon top-header first-switch-logo-left first-switch-menu-right second-switch-logo-left second-switch-menu-right right-mobile-menu layzr-loading-on wpb-js-composer js-comp-ver-5.0.1 vc_responsive outlined-portfolio-icons album-minuatures-style-2 is-webkit no-mobile phantom-off closed-overlay-mobile-header">
+<div id="page" class="closed-mobile-header">
 
-  <!-- Main Header -->
-  <header class="main-header">
-
-    <!-- Logo -->
-    <a href="index2.html" class="logo">
-      <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>JS</b>A</span>
-      <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>JSAdmin</b></span>
-    </a>
-
-    <!-- Header Navbar -->
-    <nav class="navbar navbar-static-top" role="navigation">
-      <!-- Sidebar toggle button-->
-      <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-        <span class="sr-only">Toggle navigation</span>
-      </a>
-      <!-- Navbar Right Menu -->
-      <div class="navbar-custom-menu">
-        <ul class="nav navbar-nav">
-          <!-- Messages: style can be found in dropdown.less-->
-          <li class="dropdown messages-menu">
-            <!-- Menu toggle button -->
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <i class="fa fa-envelope-o"></i>
-              <span class="label label-success">4</span>
-            </a>
-            <ul class="dropdown-menu">
-              <li class="header">You have 4 messages</li>
-              <li>
-                <!-- inner menu: contains the messages -->
-                <ul class="menu">
-                  <li><!-- start message -->
-                    <a href="#">
-                      <div class="pull-left">
-                        <!-- User Image -->
-                        <img src="https://avatars3.githubusercontent.com/u/641492?v=3&amp;s=40" class="img-circle" alt="User Image">
-                      </div>
-                      <!-- Message title and timestamp -->
-                      <h4>
-                        Support Team
-                        <small><i class="fa fa-clock-o"></i> 5 mins</small>
-                      </h4>
-                      <!-- The message -->
-                      <p>Why not buy a new awesome theme?</p>
-                    </a>
-                  </li>
-                  <!-- end message -->
-                </ul>
-                <!-- /.menu -->
-              </li>
-              <li class="footer"><a href="#">See All Messages</a></li>
-            </ul>
-          </li>
-          <!-- /.messages-menu -->
-
-          <!-- Notifications Menu -->
-          <li class="dropdown notifications-menu">
-            <!-- Menu toggle button -->
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <i class="fa fa-bell-o"></i>
-              <span class="label label-warning">10</span>
-            </a>
-            <ul class="dropdown-menu">
-              <li class="header">You have 10 notifications</li>
-              <li>
-                <!-- Inner Menu: contains the notifications -->
-                <ul class="menu">
-                  <li><!-- start notification -->
-                    <a href="#">
-                      <i class="fa fa-users text-aqua"></i> 5 new members joined today
-                    </a>
-                  </li>
-                  <!-- end notification -->
-                </ul>
-              </li>
-              <li class="footer"><a href="#">View all</a></li>
-            </ul>
-          </li>
-          <!-- Tasks Menu -->
-          <li class="dropdown tasks-menu">
-            <!-- Menu Toggle Button -->
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <i class="fa fa-flag-o"></i>
-              <span class="label label-danger">9</span>
-            </a>
-            <ul class="dropdown-menu">
-              <li class="header">You have 9 tasks</li>
-              <li>
-                <!-- Inner menu: contains the tasks -->
-                <ul class="menu">
-                  <li><!-- Task item -->
-                    <a href="#">
-                      <!-- Task title and progress text -->
-                      <h3>
-                        Design some buttons
-                        <small class="pull-right">20%</small>
-                      </h3>
-                      <!-- The progress bar -->
-                      <div class="progress xs">
-                        <!-- Change the css width attribute to simulate progress -->
-                        <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                          <span class="sr-only">20% Complete</span>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                  <!-- end task item -->
-                </ul>
-              </li>
-              <li class="footer">
-                <a href="#">View all tasks</a>
-              </li>
-            </ul>
-          </li>
-          <!-- User Account Menu -->
-          <li class="dropdown user user-menu">
-            <!-- Menu Toggle Button -->
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <!-- The user image in the navbar-->
-              <img src="https://avatars3.githubusercontent.com/u/641492?v=3&amp;s=40" class="user-image" alt="User Image">
-              <!-- hidden-xs hides the username on small devices so only the image appears. -->
-              <span class="hidden-xs">Admin</span>
-            </a>
-            <ul class="dropdown-menu">
-              <!-- The user image in the menu -->
-              <li class="user-header">
-                <img src="https://avatars3.githubusercontent.com/u/641492?v=3&amp;s=40" class="img-circle" alt="User Image">
-
-                <p>
-                  asmcos
-                  <small>01.01.2017</small>
-                </p>
-              </li>
-              <!-- Menu Body -->
-              <li class="user-body">
-                <div class="row">
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Followers</a>
-                  </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Sales</a>
-                  </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Friends</a>
-                  </div>
-                </div>
-                <!-- /.row -->
-              </li>
-              <!-- Menu Footer-->
-              <li class="user-footer">
-                <div class="pull-left">
-                  <a href="#" class="btn btn-default btn-flat">Profile</a>
-                </div>
-                <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
-                </div>
-              </li>
-            </ul>
-          </li>
-          <!-- Control Sidebar Toggle Button -->
-          <li>
-            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
-          </li>
-        </ul>
+ <div id="main" class="sidebar-right"> 
+  <div class="wf-wrap">
+   <div class="wf-container-main">
+    <div id="content" class="content" role="main">
+     <!-- 1 header-->
+     <div class="filter without-isotope extras-off filter-bg-decoration"> 
+      <div class="filter-categories">
+          <a href="http://the7.dream-demo.com/blog/blog-list/4-blog-list/?term=&amp;orderby=date&amp;order=DESC" class="show-all act" data-filter="*">View all</a>
+           <a href="http://the7.dream-demo.com/blog/blog-list/4-blog-list/?term=&amp;orderby=date&amp;order=DESC" data-filter="*">技术日志</a>
       </div>
-    </nav>
-  </header>
-  <!-- Left side column. contains the logo and sidebar -->
+      <!-- filter-categories-->
+     </div>  
+     <!-- header/filter without-isotope -->
+     <!-- 2 content-->
+     <div class="articles-list circle-fancy-style loading-effect-fade-in" data-cur-page="1" >
+       <article class="post project-odd post-15120 type-post status-publish format-standard has-post-thumbnail hentry category-technology tag-article tag-blog tag-design tag-news tag-premium tag-theme tag-themeforest tag-web tag-wordpress category-3 media-wide bg-on description-off">
 
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <h1>
-        Page Header
-        <small>Optional description</small>
-      </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
-        <li class="active">Here</li>
-      </ol>
-    </section>
+<div class="blog-media wf-td">
+<div class="fancy-date">
+<a title="10:40 am" href="http://the7.dream-demo.com/2016/09/30/" rel="nofollow">
+<span class="entry-month">Sep</span>
+<span class="entry-date updated">30</span>
 
-    <!-- Main content -->
-    <section class="content" >
-      <div id='app'></div>
-      <!-- Your Page Content Here -->
+<span class="entry-year">2016</span>
+</a>
+</div>
+<a href="http://the7.dream-demo.com/5-reasons-lorem-ipsum-dolor/" class="rollover alignnone this-ready">
 
-    </section>
-    <!-- /.content -->
+<img class="lazy-load preload-me is-loaded" src="http://the7demo.dreamthemecom.netdna-cdn.com/wp-content/uploads/2014/03/7-4-004-1500x750.jpg" alt="" width="1500" height="750" srcset="http://the7demo.dreamthemecom.netdna-cdn.com/wp-content/uploads/2014/03/7-4-004-1500x750.jpg 1500w">
+<i></i></a>
+
+</div>
+<div class="blog-content wf-td">
+<h3 class="entry-title">
+<a href="http://the7.dream-demo.com/5-reasons-lorem-ipsum-dolor/" title="5 Reasons lorem ipsum dolor" rel="bookmark">
+5 Reasons lorem ipsum dolor</a>
+</h3>
+
+<div class="entry-meta">
+<span class="category-link">
+<a href="http://the7.dream-demo.com/category/technology/">Design</a>
+</span>
+<a class="author vcard" href="http://the7.dream-demo.com/author/admin/" title="View all posts by Dream-Theme" rel="author">
+By <span class="fn">Dream-Theme</span>
+</a>
+<a href="http://the7.dream-demo.com/2016/09/30/" title="10:40 am" class="data-link" rel="bookmark"><time class="entry-date updated" datetime="2016-09-30T10:40:51+00:00">September 30, 2016</time>
+</a>
+<a href="http://the7.dream-demo.com/5-reasons-lorem-ipsum-dolor/#comments" class="comment-link">
+3 Comments</a>
+</div>
+
+<p>Duis ornare, est at lobortis mollis, felis libero mollis orci, vitae congue neque lectus vel neque. Aliquam lorem ipsum amet dolor ultrices erat.</p> 
+<a href="http://the7.dream-demo.com/5-reasons-lorem-ipsum-dolor/" class="details more-link" rel="nofollow">Details</a></div>
+
+
+ </article>  
+
+
+ <article class="post project-odd post-15120 type-post status-publish format-standard has-post-thumbnail hentry category-technology tag-article tag-blog tag-design tag-news tag-premium tag-theme tag-themeforest tag-web tag-wordpress category-3 media-wide bg-on description-off">
+
+<div class="blog-media wf-td">
+<div class="fancy-date">
+<a title="10:40 am" href="http://the7.dream-demo.com/2016/09/30/" rel="nofollow">
+<span class="entry-month">Sep</span>
+<span class="entry-date updated">30</span>
+
+<span class="entry-year">2016</span>
+</a>
+</div>
+<a href="http://the7.dream-demo.com/5-reasons-lorem-ipsum-dolor/" class="rollover alignnone this-ready">
+
+<img class="lazy-load preload-me is-loaded" src="http://the7demo.dreamthemecom.netdna-cdn.com/wp-content/uploads/2014/03/7-4-004-1500x750.jpg" alt="" width="1500" height="750" srcset="http://the7demo.dreamthemecom.netdna-cdn.com/wp-content/uploads/2014/03/7-4-004-1500x750.jpg 1500w">
+<i></i></a>
+
+</div>
+<div class="blog-content wf-td">
+<h3 class="entry-title">
+<a href="http://the7.dream-demo.com/5-reasons-lorem-ipsum-dolor/" title="5 Reasons lorem ipsum dolor" rel="bookmark">
+5 Reasons lorem ipsum dolor</a>
+</h3>
+
+<div class="entry-meta">
+<span class="category-link">
+<a href="http://the7.dream-demo.com/category/technology/">Design</a>
+</span>
+<a class="author vcard" href="http://the7.dream-demo.com/author/admin/" title="View all posts by Dream-Theme" rel="author">
+By <span class="fn">Dream-Theme</span>
+</a>
+<a href="http://the7.dream-demo.com/2016/09/30/" title="10:40 am" class="data-link" rel="bookmark"><time class="entry-date updated" datetime="2016-09-30T10:40:51+00:00">September 30, 2016</time>
+</a>
+<a href="http://the7.dream-demo.com/5-reasons-lorem-ipsum-dolor/#comments" class="comment-link">
+3 Comments</a>
+</div>
+
+<p>Duis ornare, est at lobortis mollis, felis libero mollis orci, vitae congue neque lectus vel neque. Aliquam lorem ipsum amet dolor ultrices erat.</p>
+<a href="http://the7.dream-demo.com/5-reasons-lorem-ipsum-dolor/" class="details more-link" rel="nofollow">Details</a></div>
+
+
+ </article>  
+
+   
+     </div>
+     <!-- content/articles-list -->
+     <!-- page 1,2,3, -->   
+    </div>
+    <!-- content -->
+    <!-- aside -->   
+    <aside id="sidebar" class="sidebar">
+      <div class="sidebar-content widget-divider-off">
+         <section id="presscore-blog-posts-7" class="widget widget_presscore-blog-posts">
+<div class="widget-title">Recent Posts</div>
+<ul class="recent-posts">
+<li>
+<article class="post-format-standard">
+<div class="wf-td">
+<a class="alignleft post-rollover this-ready" href="http://the7.dream-demo.com/5-reasons-lorem-ipsum-dolor/">
+<img class="lazy-load preload-me is-loaded" src="http://the7demo.dreamthemecom.netdna-cdn.com/wp-content/uploads/2014/03/7-4-004-65x50.jpg" width="65" height="50" alt="" srcset="http://the7demo.dreamthemecom.netdna-cdn.com/wp-content/uploads/2014/03/7-4-004-65x50.jpg 65w, http://the7demo.dreamthemecom.netdna-cdn.com/wp-content/uploads/2014/03/7-4-004-130x100.jpg 130w">
+<i></i>
+</a>
+</div>
+<div class="post-content">
+<a href="http://the7.dream-demo.com/5-reasons-lorem-ipsum-dolor/">5 Reasons lorem ipsum dolor</a><br><time class="text-secondary" datetime="2016-09-30T10:40:51+00:00">September 30, 2016</time>
+</div>
+</article>
+</li>
+
+
+<li>
+<article class="post-format-standard">
+<div class="wf-td">
+<a class="alignleft post-rollover this-ready" href="http://the7.dream-demo.com/5-reasons-lorem-ipsum-dolor/">
+<img class="lazy-load preload-me is-loaded" src="http://the7demo.dreamthemecom.netdna-cdn.com/wp-content/uploads/2014/03/7-4-004-65x50.jpg" width="65" height="50" alt="" srcset="http://the7demo.dreamthemecom.netdna-cdn.com/wp-content/uploads/2014/03/7-4-004-65x50.jpg 65w, http://the7demo.dreamthemecom.netdna-cdn.com/wp-content/uploads/2014/03/7-4-004-130x100.jpg 130w">
+<i></i>
+</a>
+</div>
+<div class="post-content">
+<a href="http://the7.dream-demo.com/5-reasons-lorem-ipsum-dolor/">5 Reasons lorem ipsum dolor</a><br><time class="text-secondary" datetime="2016-09-30T10:40:51+00:00">September 30, 2016</time>
+</div>
+</article>
+</li>
+
+
+</ul>
+
+</section>
+      </div>
+      <!-- sidebar-content -->     
+    </aside>
+   </div>
+   <!-- /wf-container-main  -->
   </div>
-  <!-- /.content-wrapper -->
-
-  <!-- Main Footer -->
-  <footer class="main-footer">
-    <!-- To the right -->
-    <div class="pull-right hidden-xs">
-      good luck!
-    </div>
-    <!-- Default to the left -->
-    <strong>Copyright &copy; 2017 <a href="#">JSAdmin</a>.</strong> All rights reserved.
-  </footer>
-
-  <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
-    <!-- Create the tabs -->
-    <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
-      <li class="active"><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
-      <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
-    </ul>
-    <!-- Tab panes -->
-    <div class="tab-content">
-      <!-- Home tab content -->
-      <div class="tab-pane active" id="control-sidebar-home-tab">
-        <h3 class="control-sidebar-heading">Recent Activity</h3>
-        <ul class="control-sidebar-menu">
-          <li>
-            <a href="javascript::;">
-              <i class="menu-icon fa fa-birthday-cake bg-red"></i>
-
-              <div class="menu-info">
-                <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
-
-                <p>Will be 23 on April 24th</p>
-              </div>
-            </a>
-          </li>
-        </ul>
-        <!-- /.control-sidebar-menu -->
-
-        <h3 class="control-sidebar-heading">Tasks Progress</h3>
-        <ul class="control-sidebar-menu">
-          <li>
-            <a href="javascript::;">
-              <h4 class="control-sidebar-subheading">
-                Custom Template Design
-                <span class="pull-right-container">
-                  <span class="label label-danger pull-right">70%</span>
-                </span>
-              </h4>
-
-              <div class="progress progress-xxs">
-                <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
-              </div>
-            </a>
-          </li>
-        </ul>
-        <!-- /.control-sidebar-menu -->
-
-      </div>
-      <!-- /.tab-pane -->
-      <!-- Stats tab content -->
-      <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div>
-      <!-- /.tab-pane -->
-      <!-- Settings tab content -->
-      <div class="tab-pane" id="control-sidebar-settings-tab">
-        <form method="post">
-          <h3 class="control-sidebar-heading">General Settings</h3>
-
-          <div class="form-group">
-            <label class="control-sidebar-subheading">
-              Report panel usage
-              <input type="checkbox" class="pull-right" checked>
-            </label>
-
-            <p>
-              Some information about this general settings option
-            </p>
-          </div>
-          <!-- /.form-group -->
-        </form>
-      </div>
-      <!-- /.tab-pane -->
-    </div>
-  </aside>
-  <!-- /.control-sidebar -->
-  <!-- Add the sidebar's background. This div must be placed
-       immediately after the control sidebar -->
-  <div class="control-sidebar-bg"></div>
+  <!-- /wf-wrap  -->
+ </div>
+ <!-- main / sidebar-right  -->
 </div>
 <!-- ./wrapper -->
 
