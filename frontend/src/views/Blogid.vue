@@ -10,32 +10,18 @@
       <!-- filter-categories-->
      </div>  
      <!-- header/filter without-isotope -->
+
+
      <!-- 2 content-->
-     <div class="articles-list circle-fancy-style loading-effect-fade-in" data-cur-page="1" >
-       
-       <article class="post project-odd post-15120 type-post status-publish format-standard has-post-thumbnail hentry category-technology tag-article tag-blog tag-design tag-news tag-premium tag-theme tag-themeforest tag-web tag-wordpress category-3 media-wide bg-on description-off" v-for="b in blogs">
+     <div  class="articles-list circle-fancy-style loading-effect-fade-in" data-cur-page="1" >
+ 
+       <article v-if="bid"  class="post project-odd post-15120 type-post status-publish format-standard has-post-thumbnail hentry category-technology tag-article tag-blog tag-design tag-news tag-premium tag-theme tag-themeforest tag-web tag-wordpress category-3 media-wide bg-on description-off" >
 
-	<div class="blog-media wf-td">
-		<div class="fancy-date">
-		<a title="10:40 am" href="" rel="nofollow">
-		<span class="entry-month">Sep</span>
-		<span class="entry-date updated">30</span>
 
-		<span class="entry-year">2016</span>
-		</a>
-		</div>
-		<a href="/" class="rollover alignnone this-ready">
-		<img v-if="b.coverimg" class="lazy-load preload-me is-loaded" v-bind:src="b.coverimg" alt="" width="1500" height="750" v-bind:srcset="b.coverimg">
-
-		<img v-else class="lazy-load preload-me is-loaded" src="http://the7demo.dreamthemecom.netdna-cdn.com/wp-content/uploads/2014/03/7-4-004-1500x750.jpg" alt="" width="1500" height="750" srcset="http://the7demo.dreamthemecom.netdna-cdn.com/wp-content/uploads/2014/03/7-4-004-1500x750.jpg 1500w">
-		<i></i></a>
-
-	</div>
-	<div class="blog-content wf-td">
-	<h3 class="entry-title">
-	<a v-bind:href="'/blogid/'+b._id"  rel="bookmark">
-	{{b.title}}</a>
-	</h3>
+  <div class="blog-content wf-td">
+  <h3 class="entry-title">
+  {{bid.title}}
+  </h3>
 
 	<div class="entry-meta">
 	<span class="category-link">
@@ -50,8 +36,27 @@
 	3 Comments</a>
 	</div>
 
-    <!--div v-html='b.content'></div-->
-    <a v-bind:href="'/blogid/'+b._id" class="details more-link" rel="nofollow">Details</a></div>
+  
+
+	<div class="blog-media wf-td">
+		<div class="fancy-date">
+		<a title="10:40 am" href="" rel="nofollow">
+		<span class="entry-month">Sep</span>
+		<span class="entry-date updated">30</span>
+
+		<span class="entry-year">2016</span>
+		</a>
+		</div>
+
+		<a href="/" class="rollover alignnone this-ready">
+		<img v-if="bid.coverimg" class="lazy-load preload-me is-loaded" v-bind:src="bid.coverimg" alt="" width="1500" height="750" v-bind:srcset="bid.coverimg">
+
+		<img v-else class="lazy-load preload-me is-loaded" src="http://the7demo.dreamthemecom.netdna-cdn.com/wp-content/uploads/2014/03/7-4-004-1500x750.jpg" alt="" width="1500" height="750" srcset="http://the7demo.dreamthemecom.netdna-cdn.com/wp-content/uploads/2014/03/7-4-004-1500x750.jpg 1500w">
+		<i></i></a>
+
+	</div>
+
+        <div v-html='bid.content'></div>
 
     
  </article>  
@@ -93,6 +98,7 @@
       </div>
       <!-- sidebar-content -->     
     </aside>
+
 </div>
 </template>
 
@@ -104,12 +110,15 @@ export default {
   data () {
     return {
       blogs: null,
+      bid: null,
       title: '我的所有日志',
-      blogurl: '/resources?sort=-_id'
+      blogurl: '/resources?sort=-_id',
+      blogid: '/resources/'
     }
   },
   created () {
     this.getBlogs()
+    this.getBlogid()
   },
 
   methods: {
@@ -118,6 +127,13 @@ export default {
       axios.get('http://' + window.location.hostname + ':8080' + this.blogurl)
         .then(function (response) {
           that.blogs = response.data
+        })
+    },
+    getBlogid () {
+      var that = this
+      axios.get('http://' + window.location.hostname + ':8080' + this.blogid + that.$route.params.id)
+        .then(function (response) {
+          that.bid = response.data
         })
     }
   },

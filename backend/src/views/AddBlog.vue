@@ -21,6 +21,9 @@
               <div class="form-group">
                   <input type="text" class="form-control" id="title" placeholder="写一个标题吧">
                </div>
+              <div class="form-group">
+                  <input type="text" class="form-control" id="coverimg" placeholder="封面图片地址">
+               </div>
                     <textarea id="editor1" name="editor1" rows="10" cols="80">
                                            
                     </textarea>
@@ -53,11 +56,13 @@ export default {
     sendblog () {
       /* eslint-disable */
       var title1 = $('#title').val();
+      var coverimg1 = $('#coverimg').val();
       var content1 =  CKEDITOR.instances.editor1.getData();
       /* eslint-enable */
       var that = this
       axios.post(this.blogurl, {
         title: title1,
+        coverimg: coverimg1,
         content: content1
       })
         .then(function (response) {

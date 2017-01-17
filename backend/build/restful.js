@@ -11,6 +11,7 @@ function Restful(app){
 		'resource', mongoose.Schema({
     title: String,
     content:String,
+    coverimg:String,
     createdate :Date,
     year: Number,
   }))

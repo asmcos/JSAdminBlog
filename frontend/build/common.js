@@ -5,8 +5,6 @@ var logger   = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override')
-var restful = require('node-restful')
-var Restful = require('./restful').Restful
 var app      = express ()
 const rewrite = require('express-urlrewrite')
 
@@ -21,11 +19,9 @@ app.use(bodyParser.json({type:'application/vnd.api+json'}));
 app.use(methodOverride());
 
 
-new Restful(restful,app)
 
 module.exports = {
 	app:app,
   express:express,
-  restful:restful, 
   rewrite:rewrite
 }

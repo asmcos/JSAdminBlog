@@ -22,6 +22,9 @@ app.get("/",function (req,res){
   res.sendFile(path.resolve(__dirname, '../src/index.html'));
 })
 
+app.get("/blogid/*",function (req,res){
+  res.sendFile(path.resolve(__dirname, '../src/index.html'));
+})
 module.exports = app.listen(port+1, '0.0.0.0' , function (err) {
   if (err) {
     console.log(err)
