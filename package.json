@@ -10,6 +10,7 @@
     "build:be": "webpack --config backend/build/webpack.conf.js",
     "build:fe": "webpack --config frontend/build/webpack.conf.js",
     "server": "node frontend/build/release-server.js&node backend/build/release-server.js",
+    "forever": "forever restart frontend/build/release-server.js;forever restart backend/build/release-server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
