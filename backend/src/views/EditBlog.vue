@@ -52,7 +52,7 @@ export default {
       blogcontent: null,
       blogcoverimg: null,
       blogid: null,
-      blogurl: '/resources'
+      blogurl: '/blogs'
     }
   },
   created () {

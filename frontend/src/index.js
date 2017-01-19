@@ -7,6 +7,15 @@ import App from './App'
 require('admin-lte/dist/css/AdminLTE.css')
 require('admin-lte/dist/css/skins/skin-blue.min.css')
 
+Vue.filter('GetDay', function (value) {
+  var d = new Date(value)
+  return ('' + d).split(' ')[2]
+})
+
+Vue.filter('GetMonth', function (value) {
+  var d = new Date(value)
+  return ('' + d).split(' ')[1]
+})
 // for router
 new Vue({
   el: '#app',

@@ -30,7 +30,7 @@
 	<a class="author vcard" href="http://the7.dream-demo.com/author/admin/" title="View all posts by Dream-Theme" rel="author">
 	By <span class="fn">Dream-Theme</span>
 	</a>
-	<a href="http://the7.dream-demo.com/2016/09/30/" title="10:40 am" class="data-link" rel="bookmark"><time class="entry-date updated" datetime="2016-09-30T10:40:51+00:00">September 30, 2016</time>
+	<a href="http://the7.dream-demo.com/2016/09/30/" title="10:40 am" class="data-link" rel="bookmark"><time class="entry-date updated" datetime="2016-09-30T10:40:51+00:00">{{bid.createdate}}</time>
 	</a>
 	<a href="http://the7.dream-demo.com/5-reasons-lorem-ipsum-dolor/#comments" class="comment-link">
 	3 Comments</a>
@@ -40,9 +40,9 @@
 
 	<div class="blog-media wf-td">
 		<div class="fancy-date">
-		<a title="10:40 am" href="" rel="nofollow">
-		<span class="entry-month">Sep</span>
-		<span class="entry-date updated">30</span>
+		<a title="" href="" rel="nofollow">
+    <span class="entry-month">{{bid.createdate | GetMonth}}</span>
+    <span class="entry-date updated">{{bid.createdate | GetDay}}</span>
 
 		<span class="entry-year">2016</span>
 		</a>
@@ -81,12 +81,13 @@
 		<article class="post-format-standard">
 		<div class="wf-td">
 		<a class="alignleft post-rollover this-ready" href="http://the7.dream-demo.com/5-reasons-lorem-ipsum-dolor/">
-		<img class="lazy-load preload-me is-loaded" src="http://the7demo.dreamthemecom.netdna-cdn.com/wp-content/uploads/2014/03/7-4-004-65x50.jpg" width="65" height="50" alt="" srcset="http://the7demo.dreamthemecom.netdna-cdn.com/wp-content/uploads/2014/03/7-4-004-65x50.jpg 65w, http://the7demo.dreamthemecom.netdna-cdn.com/wp-content/uploads/2014/03/7-4-004-130x100.jpg 130w">
+	
+  <img class="lazy-load preload-me is-loaded" v-bind:src="b.coverimg" width="65" height="50" alt="" >
 		<i></i>
 		</a>
 		</div>
 		<div class="post-content">
-		<a href="http://the7.dream-demo.com/5-reasons-lorem-ipsum-dolor/">{{b.title}}</a><br><time class="text-secondary" datetime="2016-09-30T10:40:51+00:00">September 30, 2016</time>
+		<a href="">{{b.title}}</a><br><time class="text-secondary" datetime="2016-09-30T10:40:51+00:00">{{b.createdate}}</time>
 		</div>
 		</article>
 		</li>
@@ -106,14 +107,14 @@
 import axios from 'axios'
 
 export default {
-  name: 'Blogs',
+  name: 'Blogid',
   data () {
     return {
       blogs: null,
       bid: null,
       title: '我的所有日志',
-      blogurl: '/resources?sort=-_id',
-      blogid: '/resources/'
+      blogurl: '/blogs?sort=-_id',
+      blogid: '/blogs/'
     }
   },
   created () {

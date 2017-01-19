@@ -48,7 +48,7 @@ export default {
   data () {
     return {
       title: '写一篇日志',
-      blogurl: '/resources'
+      blogurl: '/blogs'
     }
   },
 

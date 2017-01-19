@@ -5,10 +5,10 @@ var ObjectID = mong.Types.ObjectId
 
 function Restful(app){
 	var mongoose = restful.mongoose
-  mongoose.connect("mongodb://localhost/resoruces")	
+  mongoose.connect("mongodb://localhost/blogs")	
 
   var Resource = app.resource = restful.model(
-		'resource', mongoose.Schema({
+		'blog', mongoose.Schema({
     title: String,
     content:String,
     coverimg:String,
@@ -27,7 +27,7 @@ function Restful(app){
     req.body['createdate'] = new Date()
     next();
   })
-	Resource.register(app,'/resources')
+	Resource.register(app,'/blogs')
 
 }
 

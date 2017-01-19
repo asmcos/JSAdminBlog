@@ -4,7 +4,7 @@ JSAdminBlog is a Blog example by JSAdmin. JSAdmin + nodejs-restful.
 #Dependencies
 JSAdmin
 nodejs-restful
-mongdb
+mongodb
 
 #database install
 sudo aptitude install mongodb
