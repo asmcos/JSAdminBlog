@@ -1,5 +1,5 @@
 <template>
-   <div>
+   <div class="row">
     <div class="col-md-3" v-for="img in imgs">
       <div class="box box-widget">
        <img class="img-responsive pad" style="height:300px;" v-bind:src="'/' + img.url" alt="Photo" >
