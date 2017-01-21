@@ -1,13 +1,16 @@
 var restful = require('node-restful')
 var mong = require('mongoose')
-var ObjectID = mong.Types.ObjectId
 
+// app.blogs, /blogs
+// app.images,/images
 
 function Restful(app){
 	var mongoose = restful.mongoose
+  //databases
   mongoose.connect("mongodb://localhost/blogs")	
 
-  var Resource = app.resource = restful.model(
+  //collection 1,
+  var Resource = app.blogs = restful.model(
 		'blog', mongoose.Schema({
     title: String,
     content:String,
@@ -18,8 +21,6 @@ function Restful(app){
   .methods(['get','post','put','delete']);
 
   /*Resource.before('get', function(req, res, next) {
-  	console.log(typeof(req.params.id))
-    req.params.id = new ObjectID(req.params.id)
     next();
   })*/
 
@@ -28,6 +29,16 @@ function Restful(app){
     next();
   })
 	Resource.register(app,'/blogs')
+
+  // collection 2,
+  var UploadImg = app.images = restful.model(
+		'uploadimg', mongoose.Schema({
+    url: String,
+    createdate :Date,
+  }))
+  .methods(['get','post','put','delete']);
+
+	UploadImg.register(app,'/images')
 
 }
 
@@ -38,9 +49,9 @@ module.exports = {
 }
 
 /*
-GET /resources
-GET /resources/:id
-POST /resources
-PUT /resources/:id
-DELETE /resources/:id
+GET /blogs
+GET /blogs/:id
+POST /blogs
+PUT /blogs/:id
+DELETE /blogs/:id
 */

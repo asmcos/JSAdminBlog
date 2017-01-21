@@ -22,6 +22,14 @@ new Vue({
           { title: '我的日记', url: '/admin/myblog' },
           { title: '写日记', url: '/admin/addblog' }
         ]
+      },
+      { title: '图片管理',
+        url: '/admin/uploadimg',
+        vclass: 'treeview',
+        submenus: [
+          { title: '浏览图片', url: '/admin/allimg' },
+          { title: '传图片', url: '/admin/uploadimg' }
+        ]
       }
     ]
   }

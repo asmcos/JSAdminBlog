@@ -23,9 +23,16 @@ function Uploader(app){
         return res.end('failed')
       }
       console.log(req.refilename)
+      // app.images is mongodb collection
+      // save the url info to images collection
+      var ct = new Date()
+      app.images.create({url:req.refilename,createdate:ct})    
+
+      // return for ctrl+v , clipboard
       if (req.query['responseType'] == 'json'){
             return res.json({"fileName":"image.png","uploaded":1,"url":"/"+req.refilename})
       } else {
+        // return for upload file by form submit   
         res.setHeader('Content-Type', 'text/html'); 
 			  res.end('<script type="text/javascript">window.parent.CKEDITOR.tools.callFunction("0", "/'+req.refilename+'", "");</script>')
       }
