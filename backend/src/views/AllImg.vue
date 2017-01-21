@@ -17,7 +17,7 @@ export default {
   data () {
     return {
       imgs: null,
-      imgurl: '/images'
+      imgurl: '/images?sort=-_id'
     }
   },
   created () {

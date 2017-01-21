@@ -1,7 +1,7 @@
 <template>
    <div>
    <form v-on:submit.prevent="sendblog">
-    <div class="box box-info">
+    <div class="box box-info" id="addblog">
            
             <div class="box-header">
               <h3 class="box-title">{{title}}
@@ -21,9 +21,12 @@
               <div class="form-group">
                   <input type="text" class="form-control" id="title" placeholder="写一个标题吧">
                </div>
-              <div class="form-group">
-                  <input type="text" class="form-control" id="coverimg" placeholder="封面图片地址">
-               </div>
+               <div class="input-group input-group-sm form-group">
+                <input type="text" class="form-control" id="coverimg" placeholder="封面图片地址">
+                    <span class="input-group-btn">
+                      <a @click="selectimgwindow" class="btn btn-info btn-flat">选择照片</a>
+                    </span>
+                </div>
                     <textarea id="editor1" name="editor1" rows="10" cols="80">
                                            
                     </textarea>
@@ -35,7 +38,25 @@
               </div>
           </div>
           <!-- /.box bos-info -->
-       </form>
+     </form>
+     
+     <!-- list all image to select -->
+     <div class="row" style="z-index:200;display:none; padding:10px;" id="allimg">
+       <div class="box box-info">
+           
+          <div class="box-header">
+           <div class="col-md-3" v-for="img in imgs">
+            <div class="box box-widget">
+             <img class="img-responsive pad" style="height:300px;" v-bind:src="'/' + img.url" alt="Photo" @click="selectimgurl(img.url)" >
+            </div>
+            <!-- box-widget -->
+           </div>
+           <!--col-md-6-->
+          </div>
+          <!-- box-header -->     
+        </div>
+     </div>
+
    </div>
 </template>
 
@@ -48,7 +69,9 @@ export default {
   data () {
     return {
       title: '写一篇日志',
-      blogurl: '/blogs'
+      blogurl: '/blogs',
+      imgs: null,
+      imgurl: '/images?sort=-_id'
     }
   },
 
@@ -67,6 +90,29 @@ export default {
       })
         .then(function (response) {
           that.$router.push('/admin/myblog')
+        })
+    },
+    selectimgurl (url) {
+      /* eslint-disable */
+      var allimg = $('#allimg')
+      var addblog = $('#addblog')
+      var coverimg1 = $('#coverimg')
+      /* eslint-enable */
+      allimg.hide()
+      addblog.show()
+      coverimg1.val('/' + url)
+    },
+    selectimgwindow () {
+      /* eslint-disable */
+      var allimg = $('#allimg')
+      var addblog = $('#addblog')
+      /* eslint-enable */
+      allimg.show()
+      addblog.hide()
+      var that = this
+      axios.get(this.imgurl)
+        .then(function (response) {
+          that.imgs = response.data
         })
     }
   },
