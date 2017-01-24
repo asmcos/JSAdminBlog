@@ -45,6 +45,7 @@ export default {
       blogs: null,
       title: '我的所有日志',
       blogurl: '/blogs?sort=-_id'
+      blogdel: '/blogs'
     }
   },
   created () {
@@ -60,7 +61,7 @@ export default {
         })
     },
     deleteblog (id) {
-      axios.delete(this.blogurl + '/' + id)
+      axios.delete(this.blogdel + '/' + id)
       window.location.reload()
     },
     editblog (id) {
