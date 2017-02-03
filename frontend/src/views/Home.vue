@@ -1,7 +1,7 @@
 <template>
    <div>
    Welcome to JSAdmin Blog
-   <div id="3" style="height:800px"> JSsss</div>
+   <div id="3" style="height:800px"> </div>
    </div>
 </template>
 

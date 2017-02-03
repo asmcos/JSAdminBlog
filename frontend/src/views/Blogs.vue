@@ -22,7 +22,7 @@
 		<span class="entry-date updated">{{b.createdate | GetDay}}</span>
     </a>
 		</div>
-		<a href="/" class="rollover alignnone this-ready">
+		<a v-bind:href="'/blogid/' +b._id" class="rollover alignnone this-ready">
 		<img v-if="b.coverimg" class="lazy-load preload-me is-loaded" v-bind:src="b.coverimg" alt="" width="1500" height="750" v-bind:srcset="b.coverimg">
 
 		<img v-else class="lazy-load preload-me is-loaded" src="http://the7demo.dreamthemecom.netdna-cdn.com/wp-content/uploads/2014/03/7-4-004-1500x750.jpg" alt="" width="1500" height="750" srcset="http://the7demo.dreamthemecom.netdna-cdn.com/wp-content/uploads/2014/03/7-4-004-1500x750.jpg 1500w">
@@ -36,12 +36,6 @@
 	</h3>
 
 	<div class="entry-meta">
-	<span class="category-link">
-	<a href="http://the7.dream-demo.com/category/technology/">Design</a>
-	</span>
-	<a class="author vcard" href="http://the7.dream-demo.com/author/admin/" title="View all posts by Dream-Theme" rel="author">
-	By <span class="fn">Dream-Theme</span>
-	</a>
 	<a href="" title="10:40 am" class="data-link" rel="bookmark"><time class="entry-date updated" datetime="2016-09-30T10:40:51+00:00">{{b.createdate}}</time>
 	</a>
 	<a href="http://the7.dream-demo.com/5-reasons-lorem-ipsum-dolor/#comments" class="comment-link">
@@ -73,13 +67,13 @@
 		<li  v-for="b in blogs">
 		<article class="post-format-standard">
 		<div class="wf-td">
-		<a class="alignleft post-rollover this-ready" href="http://the7.dream-demo.com/5-reasons-lorem-ipsum-dolor/">
+		<a class="alignleft post-rollover this-ready" href="">
 		<img class="lazy-load preload-me is-loaded" v-bind:src="b.coverimg" width="65" height="50" alt="" >
 		<i></i>
 		</a>
 		</div>
 		<div class="post-content">
-		<a href="">{{b.title}}</a><br><time class="text-secondary" datetime="2016-09-30T10:40:51+00:00">{{b.createdate}}</time>
+		<a v-bind:href="'/blogid/' + b._id">{{b.title}}</a><br><time class="text-secondary" datetime="2016-09-30T10:40:51+00:00">{{b.createdate}}</time>
 		</div>
 		</article>
 		</li>

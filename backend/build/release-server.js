@@ -17,12 +17,30 @@ app.use(express.static(path.resolve(__dirname,'../dist')));
 app.use(express.static(path.resolve(__dirname,'../../third/ckeditor')));
 app.use(express.static(path.resolve(__dirname,'../../uploads')));
 
+app.get("/admin/login",function (req,res){
+    res.sendFile(path.resolve(__dirname, '../src/index.html'));
+})
+
+app.get("/admin/register",function (req,res){
+    res.sendFile(path.resolve(__dirname, '../src/index.html'));
+})
+
 app.get("/admin/*",function (req,res){
-  res.sendFile(path.resolve(__dirname, '../src/index.html'));
+ if(req.isAuthenticated()){
+    res.sendFile(path.resolve(__dirname, '../src/index.html'));
+  }
+  else{
+    res.redirect('/admin/login');
+  }
 })
 
 app.get("/",function (req,res){
-  res.sendFile(path.resolve(__dirname, '../src/index.html'));
+ if(req.isAuthenticated()){
+    res.sendFile(path.resolve(__dirname, '../src/index.html'));
+  }
+  else{
+    res.redirect('/admin/login');
+  }
 })
 
 module.exports = app.listen(port, '0.0.0.0' , function (err) {

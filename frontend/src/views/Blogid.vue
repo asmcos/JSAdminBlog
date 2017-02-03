@@ -20,7 +20,7 @@
 
   <div class="blog-content wf-td">
   <h3 class="entry-title">
-  {{bid.title}}
+  <a>{{bid.title}}</a>
   </h3>
 
 	<div class="entry-meta">
@@ -48,7 +48,7 @@
 		</a>
 		</div>
 
-		<a href="/" class="rollover alignnone this-ready">
+		<a  class="rollover alignnone this-ready">
 		<img v-if="bid.coverimg" class="lazy-load preload-me is-loaded" v-bind:src="bid.coverimg" alt="" width="1500" height="750" v-bind:srcset="bid.coverimg">
 
 		<img v-else class="lazy-load preload-me is-loaded" src="http://the7demo.dreamthemecom.netdna-cdn.com/wp-content/uploads/2014/03/7-4-004-1500x750.jpg" alt="" width="1500" height="750" srcset="http://the7demo.dreamthemecom.netdna-cdn.com/wp-content/uploads/2014/03/7-4-004-1500x750.jpg 1500w">
@@ -87,7 +87,7 @@
 		</a>
 		</div>
 		<div class="post-content">
-		<a href="">{{b.title}}</a><br><time class="text-secondary" datetime="2016-09-30T10:40:51+00:00">{{b.createdate}}</time>
+		<a v-bind:href="'/blogid/' +b._id">{{b.title}}</a><br><time class="text-secondary" datetime="2016-09-30T10:40:51+00:00">{{b.createdate}}</time>
 		</div>
 		</article>
 		</li>
