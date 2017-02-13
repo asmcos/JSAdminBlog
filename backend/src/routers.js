@@ -5,6 +5,9 @@ import Home from './views/Home.vue'
 import Blogs from './views/Blogs'
 import AddBlog from './views/AddBlog'
 import EditBlog from './views/EditBlog'
+import TechBlogs from './views/TechBlogs'
+import AddTechBlog from './views/AddTechBlog'
+import EditTechBlog from './views/EditTechBlog'
 import AllImg from './views/AllImg'
 import UploadImg from './views/UploadImg'
 import Register from './views/Register'
@@ -20,6 +23,9 @@ const router = new VueRouter({
     { path: '/admin/myblog', name: '/admin/myblog', component: Blogs },
     { path: '/admin/addblog', name: '/admin/addblog', component: AddBlog },
     { path: '/admin/editblog', name: '/admin/editblog', component: EditBlog },
+    { path: '/admin/techblog', component: TechBlogs },
+    { path: '/admin/addtechblog', component: AddTechBlog },
+    { path: '/admin/edittechblog', component: EditTechBlog },
     { path: '/admin/allimg', name: '/admin/allimg', component: AllImg },
     { path: '/admin/uploadimg', name: '/admin/uploadimg', component: UploadImg },
     { path: '/admin/register', name: '/admin/register', component: Register },

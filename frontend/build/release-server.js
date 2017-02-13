@@ -18,13 +18,15 @@ app.use(express.static(path.resolve(__dirname,'../../uploads')));
 app.use(express.static(path.resolve(__dirname,'../../third')));
 
 
-app.get("/",function (req,res){
+app.get(["/","/tech"],function (req,res){
   res.sendFile(path.resolve(__dirname, '../src/index.html'));
 })
 
-app.get("/blogid/*",function (req,res){
+
+app.get(["/blogid/*","/techblogid/*"],function (req,res){
   res.sendFile(path.resolve(__dirname, '../src/index.html'));
 })
+
 module.exports = app.listen(port+1, '0.0.0.0' , function (err) {
   if (err) {
     console.log(err)

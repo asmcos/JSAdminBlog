@@ -33,7 +33,7 @@ npm run restart
 
 ## Demo
 
-<p align="center"><a href="https://makerobot.org" target="_blank"><img width="600"src="http://jsadmin.makerobot.org/upload-1486169949080-image.png"></a></p>
+<p align="center"><a href="http://makerobot.org" target="_blank"><img width="600"src="http://jsadmin.makerobot.org/upload-1486169949080-image.png"></a></p>
 
 ## JSAdmin
 

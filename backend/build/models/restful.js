@@ -40,6 +40,23 @@ function Restful(app){
 
 	UploadImg.register(app,'/images')
 
+
+ //collection 3, technology
+ var Techblogs = app.techblogs = restful.model(
+		'techblog', mongoose.Schema({
+    title: String,
+    content:String,
+    logo:String,
+    createdate :Date,
+    year: Number,
+  }))
+  .methods(['get','post','put','delete']);
+ 
+  Techblogs.before('post', function(req, res, next) {
+    req.body['createdate'] = new Date()
+    next();
+  })
+	Techblogs.register(app,'/techblogs')
 }
 
 

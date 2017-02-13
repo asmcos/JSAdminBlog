@@ -19,8 +19,10 @@ new Vue({
         url: '/admin/Blog',
         vclass: 'treeview',
         submenus: [
-          { title: '我的日记', url: '/admin/myblog' },
-          { title: '写日记', url: '/admin/addblog' }
+          { title: '随心日记', url: '/admin/myblog' },
+          { title: '写随心日记', url: '/admin/addblog' },
+          { title: '技术日记', url: '/admin/techblogs' },
+          { title: '写技术日记', url: '/admin/addtechblog' }
         ]
       },
       { title: '图片管理',

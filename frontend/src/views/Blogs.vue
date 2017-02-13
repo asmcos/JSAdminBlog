@@ -5,7 +5,7 @@
      <div class="filter without-isotope extras-off filter-bg-decoration"> 
       <div class="filter-categories">
           <a href="/" class="show-all act" data-filter="*">首页</a>
-           <a href="" data-filter="*">技术日志</a>
+           <a href="/tech" data-filter="*">技术日志</a>
       </div>
       <!-- filter-categories-->
      </div>  
@@ -48,7 +48,6 @@
     
  </article>  
 
- 
    
      </div>
      <!-- content/articles-list -->
