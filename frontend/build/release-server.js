@@ -8,6 +8,7 @@ var rewrite   = common.rewrite
 var port  = process.env.PORT || config.dev.port
 
 
+var highlight = '../../third/ckeditor/plugins/codesnippet/lib/highlight'
 // serve pure static assets
 //var staticPath = path.posix.join(config.build.assetsPublicPath, config.build.assetsSubDirectory)
 //var staticPath = path.posix.join(config.build.assetsRoot,staticPath)
@@ -16,6 +17,7 @@ var port  = process.env.PORT || config.dev.port
 app.use(express.static(path.resolve(__dirname,'../dist')));
 app.use(express.static(path.resolve(__dirname,'../../uploads')));
 app.use(express.static(path.resolve(__dirname,'../../third')));
+app.use(express.static(path.resolve(__dirname,highlight)));
 
 
 app.get(["/","/tech"],function (req,res){
