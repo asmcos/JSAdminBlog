@@ -74,7 +74,7 @@ export default {
               CKEDITOR.instances.editor1.setData(that.blogcontent);
 							clearInterval(nIntervId)
             }
-          }, 500);
+          }, 2000);
           /* eslint-enable */
         })
     },

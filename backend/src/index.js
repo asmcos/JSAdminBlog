@@ -21,7 +21,7 @@ new Vue({
         submenus: [
           { title: '随心日记', url: '/admin/myblog' },
           { title: '写随心日记', url: '/admin/addblog' },
-          { title: '技术日记', url: '/admin/techblogs' },
+          { title: '技术日记', url: '/admin/techblog' },
           { title: '写技术日记', url: '/admin/addtechblog' }
         ]
       },
