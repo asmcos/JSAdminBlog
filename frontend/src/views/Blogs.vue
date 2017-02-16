@@ -38,8 +38,8 @@
 	<div class="entry-meta">
 	<a href="" title="10:40 am" class="data-link" rel="bookmark"><time class="entry-date updated" datetime="2016-09-30T10:40:51+00:00">{{b.createdate}}</time>
 	</a>
-	<a href="http://the7.dream-demo.com/5-reasons-lorem-ipsum-dolor/#comments" class="comment-link">
-	3 Comments</a>
+	<a href="" class="comment-link">
+	{{b.pv}}人浏览</a>
 	</div>
 
     <!--div v-html='b.content'></div-->
