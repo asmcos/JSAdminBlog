@@ -22,10 +22,7 @@ function Restful(app){
 
   Resource.after('get', function(req, res, next) {
     if (req.params.id){
-        var pv = 1
-        if (res.locals.bundle.pv)
-					pv = res.locals.bundle.pv + 1
-				
+				var	pv = res.locals.bundle.pv + 1
         res.locals.bundle.pv = pv
         Resource.update({_id:req.params.id},{pv:pv},function(err, count, resp) {
         });
@@ -37,6 +34,7 @@ function Restful(app){
   Resource.before('post', function(req, res, next) {
     if(req.isAuthenticated()){
       req.body['createdate'] = new Date()
+      req.body['pv'] = 1
       next();
     } else {
 			res.sendStatus(403);
@@ -85,10 +83,7 @@ function Restful(app){
  
   Techblogs.after('get', function(req, res, next) {
     if (req.params.id){
-        var pv = 1
-        if (res.locals.bundle.pv)
-					pv = res.locals.bundle.pv + 1
-        
+				var	pv = res.locals.bundle.pv + 1
 				res.locals.bundle.pv = pv
         Techblogs.update({_id:req.params.id},{pv:pv},function(err, count, resp) {
         });
@@ -100,6 +95,7 @@ function Restful(app){
   Techblogs.before('post', function(req, res, next) {
     if(req.isAuthenticated()){
       req.body['createdate'] = new Date()
+      req.body['pv'] = 1
       next();
     } else {
 			res.sendStatus(403);
