@@ -16,18 +16,49 @@ function Restful(app){
     content:String,
     coverimg:String,
     createdate :Date,
-    year: Number,
+    pv: Number,
   }))
   .methods(['get','post','put','delete']);
 
-  /*Resource.before('get', function(req, res, next) {
-    next();
-  })*/
+  Resource.after('get', function(req, res, next) {
+    if (req.params.id){
+        var pv = 1
+        if (res.locals.bundle.pv)
+					pv = res.locals.bundle.pv + 1
+				
+        res.locals.bundle.pv = pv
+        Resource.update({_id:req.params.id},{pv:pv},function(err, count, resp) {
+        });
 
-  Resource.before('post', function(req, res, next) {
-    req.body['createdate'] = new Date()
+    }
     next();
   })
+
+  Resource.before('post', function(req, res, next) {
+    if(req.isAuthenticated()){
+      req.body['createdate'] = new Date()
+      next();
+    } else {
+			res.sendStatus(403);
+    } 
+  })
+
+  Resource.before('put', function(req, res, next) {
+    if(req.isAuthenticated()){
+      next();
+    } else {
+			res.sendStatus(403);
+    } 
+  })
+
+  Resource.before('delete', function(req, res, next) {
+    if(req.isAuthenticated()){
+      next();
+    } else {
+			res.sendStatus(403);
+    } 
+  })
+
 	Resource.register(app,'/blogs')
 
   // collection 2,
@@ -48,14 +79,49 @@ function Restful(app){
     content:String,
     logo:String,
     createdate :Date,
-    year: Number,
+    pv: Number,
   }))
   .methods(['get','post','put','delete']);
  
-  Techblogs.before('post', function(req, res, next) {
-    req.body['createdate'] = new Date()
+  Techblogs.after('get', function(req, res, next) {
+    if (req.params.id){
+        var pv = 1
+        if (res.locals.bundle.pv)
+					pv = res.locals.bundle.pv + 1
+        
+				res.locals.bundle.pv = pv
+        Techblogs.update({_id:req.params.id},{pv:pv},function(err, count, resp) {
+        });
+
+    }
     next();
   })
+
+  Techblogs.before('post', function(req, res, next) {
+    if(req.isAuthenticated()){
+      req.body['createdate'] = new Date()
+      next();
+    } else {
+			res.sendStatus(403);
+    } 
+  })
+
+  Techblogs.before('put', function(req, res, next) {
+    if(req.isAuthenticated()){
+      next();
+    } else {
+			res.sendStatus(403);
+    } 
+  })
+
+  Techblogs.before('delete', function(req, res, next) {
+    if(req.isAuthenticated()){
+      next();
+    } else {
+			res.sendStatus(403);
+    } 
+  })
+
 	Techblogs.register(app,'/techblogs')
 }
 
