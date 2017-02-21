@@ -39,6 +39,7 @@ import axios from 'axios'
 
 export default {
   data () {
+    window.menuvue.$options.data().menus[3].vclass = 'treeview active'
     return {
       uploadurl: '/uploader/uploadimage'
     }

@@ -66,6 +66,7 @@ import axios from 'axios'
 
 export default {
   data () {
+    window.menuvue.$options.data().menus[2].vclass = 'treeview active'
     return {
       title: '写一篇技术日志',
       blogurl: '/techblogs',

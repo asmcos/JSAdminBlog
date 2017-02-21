@@ -9,7 +9,7 @@ require('admin-lte/dist/css/skins/skin-blue.min.css')
 
 // for side menus
 // add a menu entry, need add a link entry by routers.js
-new Vue({
+var menuvue = new Vue({
   el: '#menu_main',
   data: {
     menus: [
@@ -36,6 +36,8 @@ new Vue({
     ]
   }
 }).$mount('#menu_main')
+
+window.menuvue = menuvue
 
 // for router
 new Vue({

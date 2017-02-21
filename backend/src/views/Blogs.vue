@@ -50,6 +50,7 @@ export default {
   },
   created () {
     this.getBlogs()
+    window.menuvue.$options.data().menus[2].vclass = 'treeview active'
   },
 
   methods: {

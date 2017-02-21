@@ -22,6 +22,7 @@ export default {
   },
   created () {
     this.getImgs()
+    window.menuvue.$options.data().menus[3].vclass = 'treeview active'
   },
   methods: {
     getImgs () {
